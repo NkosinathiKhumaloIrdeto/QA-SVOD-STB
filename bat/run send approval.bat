@@ -1,0 +1,1 @@
+newman run "collections/SVOD-STB-APPROVE-ALL.json"

@@ -1,0 +1,64 @@
+{
+	"info": {
+		"name": "SVOD-STB-APPROVE ALL",
+		"_postman_id": "eb1a5c9a-0e6b-f536-de19-df50092a9f96",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send an Approval for All SVOD STB Programs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a03f9ef3-f45f-41cf-a458-102fdeae552d",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Expected result Approved\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Approved\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://172.16.103.237:8008/AutomatedTesting.php?task=approveAllPrograms&genrefId={genref}",
+					"protocol": "http",
+					"host": [
+						"172",
+						"16",
+						"103",
+						"237"
+					],
+					"port": "8008",
+					"path": [
+						"AutomatedTesting.php"
+					],
+					"query": [
+						{
+							"key": "task",
+							"value": "approveAllPrograms",
+							"equals": true
+						},
+						{
+							"key": "genrefId",
+							"value": "{genref}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

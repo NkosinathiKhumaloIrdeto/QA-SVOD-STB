@@ -1,0 +1,1 @@
+"bat/run generate.bat" & "bat/run post.bat"
