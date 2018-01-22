@@ -62,7 +62,7 @@ logPaths.withReader { reader ->
             }
 
           if (file.path.indexOf("11303") > 0){
-            if ((file.getName().indexOf("m2.mpg") > 0) || (file.getName().indexOf(".mpg.idx") > 0)){
+            if ((file.getName().indexOf("m1.mpg") > 0) || (file.getName().indexOf(".mpg.idx") > 0)){
                 a3++
               }
             }
@@ -90,10 +90,10 @@ def fileExists(def path){
   
 }
 println ""
-if(a1 == 1){println "SD - YES"} else {println "SD - X"}
-if(a2 == 3){println "HD - YES"} else {println "HD - X"}
-if(a3 == 3){println "EXP - YES"} else {println "EXP - X"}
-if(a4 == 3){println "NAN - YES"} else {println "NAN - X"}
+if(a1 >= 2){println "SD - YES"} else {println "SD - X"}
+if(a2 >= 3){println "HD - YES"} else {println "HD - X"}
+if(a3 >= 3){println "EXP - YES"} else {println "EXP - X"}
+if(a4 >= 3){println "NAN - YES"} else {println "NAN - X"}
 println ""
 
 if(missingFolders.length() > 0){
@@ -101,7 +101,7 @@ if(missingFolders.length() > 0){
   println " " + missingFolders
 }
 
-if((a1 == 0) && (a2 == 3) && (a3 == 2) && (a4 == 3)) {
+if((a1 >= 1) && (a2 >= 3) && (a3 >= 3) && (a4 >= 3)) {
   
   logPaths.text = ''
   
