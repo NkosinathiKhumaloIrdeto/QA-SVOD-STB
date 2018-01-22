@@ -37,6 +37,7 @@ def svoduid = svoduid_4digits + "SVOD" + svoduid_2digits
 //uiD setup
 
 def svodSeriesId = String.valueOf(((int)((Math.random()*99999)+1))).substring(0, 4)
+def svodSeasonId = String.valueOf(((int)((Math.random()*99999)+1))).substring(0, 4)
 
 /*GENERATE FIRST*/
 
@@ -47,13 +48,13 @@ def xmlContents = new File("collections/collection.json").getText()
 def networkPath =  "collections/collection1.json"
 
 //put values in array
-def vals = [svodGenref,svoduid,svodSeriesId]
+def vals = [svodGenref,svoduid,svodSeriesId, svodSeasonId]
 
-def keys = ["{#Project#svodGenref}","{#Project#svoduid}","{#Project#svodSeriesId}"]
+def keys = ["{#Project#svodGenref}","{#Project#svoduid}","{#Project#SVODseriesid}", "{#Project#SVODseasonid}"]
 
 def key = keys[0]
 
-for(def i = 0; i < 3; ++i){
+for(def i = 0; i < 4; ++i){
 
 	//log.info xmlContents//keys[i] + " " + vals[i]
 	
