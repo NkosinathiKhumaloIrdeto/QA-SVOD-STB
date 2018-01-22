@@ -31,7 +31,7 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "http://172.16.103.237:8008/AutomatedTesting.php?task=approveAllPrograms&genrefId=5951006",
+					"raw": "http://172.16.103.237:8008/AutomatedTesting.php?task=approveAllPrograms&genrefId=5452522",
 					"protocol": "http",
 					"host": [
 						"172",
@@ -51,7 +51,7 @@
 						},
 						{
 							"key": "genrefId",
-							"value": "5951006",
+							"value": "5452522",
 							"equals": true
 						}
 					]
