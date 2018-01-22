@@ -1,1 +1,0 @@
-"bat/run post.bat"

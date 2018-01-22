@@ -8,7 +8,7 @@ public class NotProcessedException extends Exception{
   
 }
 
-File txtFile = new File("../folders_SVODSTB.txt");
+File txtFile = new File("../automation/folders_SVODSTB.txt");
 
 if(txtFile.exists()){
 
@@ -118,24 +118,54 @@ println ""
 println "=================================================================="
 println ""
 
-logFolders(svodGenref)
+  
+if (checkDir("../automation/")){
+    logFolders(svodGenref)    
+  }
+
+
+
 
 def logFolders(genref){
-  
-File file = new File("../folders_SVODSTB.txt")
+
+  File file = new File("../automation/folders_SVODSTB.txt")
   
   file.text = ''
  
-file << genref + "_" + "11103\n" +  genref + "_" + "11203\n" +  genref + "_" + "11303\n" +  genref + "_" + "11403"
+  file << genref + "_" + "11103\n" +  genref + "_" + "11203\n" +  genref + "_" + "11303\n" +  genref + "_" + "11403"
   
 }
 
 //Update file for approval
-def jsonContents = new File("collections/SVOD-STB-APPROVE-ALL.json").getText()
-def jsonFilePath = "collections/SVOD-STB-APPROVE-ALL1.json"
 
-jsonContents = jsonContents.replace("{genref}",svodGenref);
+//check if dir exists
+if(checkDir("../automation/collections/")){
 
-File jsonFile = new File(jsonFilePath)
+  def jsonContents = new File("collections/SVOD-STB-APPROVE-ALL.json").getText()
+  def jsonFilePath = "../automation/collections/SVOD-STB-APPROVE-ALL1.json"
 
-jsonFile.text = jsonContents
+  jsonContents = jsonContents.replace("{genref}",svodGenref);
+
+  File jsonFile = new File(jsonFilePath)
+
+  jsonFile.text = jsonContents
+
+} else {
+
+throw new IOException("Folder path not found: " + "../automation/collections/")
+
+}
+
+def checkDir(def path){
+
+def folder = new File( path )
+
+  if( !folder.exists() ) {
+    // Create all folders up-to and including B
+    folder.mkdirs()
+  } else {
+    return true
+  }
+
+  return true
+}

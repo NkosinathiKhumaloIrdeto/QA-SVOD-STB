@@ -10,8 +10,8 @@ public class NoProcessedException extends Exception{
   
 }
 
-def logPaths = new File("../folders_SVODSTB.txt")
-def checkText = new File("../folders_SVODSTB.txt").getText()
+def logPaths = new File("../automation/folders_SVODSTB.txt")
+def checkText = new File("../automation/folders_SVODSTB.txt").getText()
 
 if (!(checkText.length() > 0)) {
   

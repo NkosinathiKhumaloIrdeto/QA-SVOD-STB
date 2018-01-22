@@ -1,1 +1,1 @@
-newman run "collections/SVOD-STB-APPROVE-ALL.json"
+newman run "../automation/collections/SVOD-STB-APPROVE-ALL1.json"
