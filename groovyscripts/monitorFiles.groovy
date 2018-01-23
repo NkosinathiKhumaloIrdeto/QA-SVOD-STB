@@ -49,20 +49,20 @@ logPaths.withReader { reader ->
           println "   " + file.path
 
           if (file.path.indexOf("11103") > 0){
-            if (file.getName().indexOf("m1.mpg") > 0){
+            if (file.getName().indexOf(".mpg") > 0){
                 a1++
               }
             }
           
           if (file.path.indexOf("11203") > 0){
           
-            if ((file.getName().indexOf("m1.mpg") > 0) || (file.getName().indexOf(".mpg.idx") > 0)){
+            if ((file.getName().indexOf(".mpg") > 0) || (file.getName().indexOf(".mpg.idx") > 0)){
                 a2++
               }
             }
 
           if (file.path.indexOf("11303") > 0){
-            if ((file.getName().indexOf("m1.mpg") > 0) || (file.getName().indexOf(".mpg.idx") > 0)){
+            if ((file.getName().indexOf(".mpg") > 0) || (file.getName().indexOf(".mpg.idx") > 0)){
                 a3++
               }
             }
@@ -70,7 +70,7 @@ logPaths.withReader { reader ->
 
            if (file.path.indexOf("11403") > 0){
               
-            if ((file.getName().indexOf("m1.mpg") > 0) || (file.getName().indexOf(".mpg.idx") > 0)){
+            if ((file.getName().indexOf(".mpg") > 0) || (file.getName().indexOf(".mpg.idx") > 0)){
                 a4++
               }
             }      
