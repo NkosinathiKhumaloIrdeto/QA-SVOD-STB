@@ -72,9 +72,17 @@ println ""
 
 println "=================================================================="
 println ""
+log_genref(svodGenref)
+def log_genref(svodGenref){
+
+  File file = new File("../Batch/SVOD_folders.txt")
+
+  file << svodGenref + "\n"
+
+}
 
 /*DROP IMAGE==============================================================*/
-def soureFileImg = "//172.16.103.220/MediaManager/Automation image ingest/automation.png"
+/*def soureFileImg = "//172.16.103.220/MediaManager/Automation image ingest/automation.png"
 def destFileImg = "//172.16.103.220/MediaManager/Images/"
 
 def extImg =  soureFileImg.substring(soureFileImg.length() - 4)
@@ -91,10 +99,11 @@ println "Done dropping image: " + destFileImg + seriesIdImg + extImg
 println ""
 println "=================================================================="
 println ""
-
+*/
 /*DROP ASSET==============================================================*/
 //specify source & dest
-def soureFileAss = "//172.16.103.220/Encoder_Area/Ardome/Automation files/automation_ssm.mxf"
+
+/*def soureFileAss = "//172.16.103.220/Encoder_Area/Ardome/Automation files/automation_ssm.mxf"
 
 
 def destFileAss = "//172.16.103.220/Encoder_Area/Ardome/AUTOMATION_SYSTEM/"
@@ -168,4 +177,4 @@ def folder = new File( path )
   }
 
   return true
-}
+} */
