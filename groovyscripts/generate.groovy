@@ -72,10 +72,12 @@ println ""
 
 println "=================================================================="
 println ""
+
 log_genref(svodGenref)
+
 def log_genref(svodGenref){
 
-  File file = new File("../Batch/SVOD_folders.txt")
+  File file = new File("../batch/SVOD_folders.txt")
 
   file << svodGenref + "\n"
 
