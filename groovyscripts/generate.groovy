@@ -77,7 +77,7 @@ log_genref(svodGenref)
 
 def log_genref(svodGenref){
 
-  File file = new File("../batch/SVOD_folders.txt")
+  File file = new File("../../batch/SVOD_folders.txt")
 
   file << svodGenref + "\n"
 
