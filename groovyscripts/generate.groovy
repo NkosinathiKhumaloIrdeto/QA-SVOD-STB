@@ -73,8 +73,10 @@ println ""
 println "=================================================================="
 println ""
 
-log_genref(svodGenref)
 
+dropVideo(svodGenref, svoduid, "automation.mxf")
+log_genref(svodGenref)
+drop_image(svodSeriesId)
 def log_genref(svodGenref){
 
   File file = new File("../../batch/SVOD_folders.txt")
@@ -82,6 +84,51 @@ def log_genref(svodGenref){
   file << svodGenref + "\n"
 
 }
+
+/*DROP ASSET==============================================================*/
+//specify source & dest
+
+def dropVideo(def genref, def uid, def name){
+  
+  println "\n Dropping source..."
+ ///mnt/Encoder_Area
+  def soureFile = "/mnt/Encoder_Area/Ardome/Automation files/" + name
+  println soureFile
+  def destFile = "/mnt/Encoder_Area/Ardome/AUTOMATION_SYSTEM/"
+  
+  def vidName = destFile + genref + "_" + uid + ".mxf"
+
+  def srcStream = new File(soureFile).newDataInputStream()
+  def dstStream = new File(vidName).newDataOutputStream()
+  dstStream << srcStream
+  srcStream.close()
+  dstStream.close()
+
+  println "\n Done dropping source..." + "\n" + vidName
+}
+
+def drop_image(def svodSeriesId){
+
+  def soureFileImg = "/mnt/MediaManager/Automation image ingest/automation.png"
+def destFileImg = "/mnt/MediaManager/Images/"
+
+def extImg =  soureFileImg.substring(soureFileImg.length() - 4)
+def seriesIdImg = svodSeriesId
+
+def srcStreamImg = new File(soureFileImg).newDataInputStream()
+def dstStreamImg = new File(destFileImg + svodSeriesId + extImg).newDataOutputStream()
+dstStreamImg << srcStreamImg
+srcStreamImg.close()
+dstStreamImg.close()
+
+println "Done dropping image: " + destFileImg + seriesIdImg + extImg
+
+println ""
+println "=================================================================="
+println ""
+
+}
+
 
 /*DROP IMAGE==============================================================*/
 /*def soureFileImg = "//172.16.103.220/MediaManager/Automation image ingest/automation.png"
