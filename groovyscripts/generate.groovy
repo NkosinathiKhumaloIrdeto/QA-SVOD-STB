@@ -111,8 +111,8 @@ def dropVideo(def genref, def uid, def name){
 
 def drop_image(def svodSeriesId){
 
-  def soureFileImg = "/mnt/VOD_Operations/MNet/Images/processed/54615.png"
-def destFileImg = "/mnt/VOD_Operations/MNet/Images/processed/"
+  def soureFileImg = "/mnt/MNet/Images/processed/54615.png"
+def destFileImg = "/mnt/MNet/Images/processed/"
 
 def extImg =  soureFileImg.substring(soureFileImg.length() - 4)
 def seriesIdImg = svodSeriesId
