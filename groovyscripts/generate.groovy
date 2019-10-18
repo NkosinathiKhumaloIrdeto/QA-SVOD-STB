@@ -107,10 +107,12 @@ def dropVideo(def genref, def uid, def name){
   println "\n Done dropping source..." + "\n" + vidName
 }
 
+//
+
 def drop_image(def svodSeriesId){
 
-  def soureFileImg = "/mnt/MediaManager/Automation image ingest/automation.png"
-def destFileImg = "/mnt/MediaManager/Images/"
+  def soureFileImg = "/mnt/VOD_Operations/MNet/Images/processed/54615.png"
+def destFileImg = "/mnt/VOD_Operations/MNet/Images/processed/"
 
 def extImg =  soureFileImg.substring(soureFileImg.length() - 4)
 def seriesIdImg = svodSeriesId
