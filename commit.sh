@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "adding changes..."
 git add .
 echo "commiting changes"
